@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Safety Checker</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Safety Checker</h1>
+    <form method="post">
+        <input type="text" name="url" placeholder="Enter URL here" required />
+        <input type="submit" value="Check" />
+    </form>
+    {% if result %}
+        <div class="result">{{ result|safe }}</div>
+    {% endif %}
+</body>
+</html>
